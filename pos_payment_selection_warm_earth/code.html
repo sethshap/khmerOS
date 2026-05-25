@@ -1,0 +1,211 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Serif+4:wght@400;600&amp;family=Work+Sans:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-container": "#fed7ca",
+                "tertiary-fixed": "#ffe088",
+                "error-container": "#ffdad6",
+                "secondary-fixed": "#ffdbce",
+                "on-secondary-container": "#795c51",
+                "outline-variant": "#d3c3c0",
+                "on-tertiary-container": "#4e3d00",
+                "on-secondary-fixed": "#2b160f",
+                "tertiary-container": "#cba72f",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#fdf8f6",
+                "surface-container-highest": "#e5e2e0",
+                "surface-container-high": "#ebe7e5",
+                "on-tertiary-fixed-variant": "#574500",
+                "primary-container": "#3e2723",
+                "surface-tint": "#745853",
+                "on-primary-fixed": "#2b1613",
+                "on-surface-variant": "#504442",
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f4f0ee",
+                "error": "#ba1a1a",
+                "primary-fixed": "#ffdad4",
+                "on-tertiary-fixed": "#241a00",
+                "surface-dim": "#ddd9d7",
+                "on-background": "#1c1b1b",
+                "surface-variant": "#e5e2e0",
+                "tertiary-fixed-dim": "#e9c349",
+                "background": "#fdf8f6",
+                "on-primary-fixed-variant": "#5b403c",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#e3beb8",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#e4beb2",
+                "on-primary-container": "#ae8d87",
+                "surface-container-low": "#f7f3f1",
+                "surface": "#fdf8f6",
+                "primary": "#271310",
+                "on-tertiary": "#ffffff",
+                "surface-container": "#f1edeb",
+                "secondary": "#75584d",
+                "on-secondary-fixed-variant": "#5b4137",
+                "inverse-primary": "#e3beb8",
+                "outline": "#827472",
+                "on-surface": "#1c1b1b",
+                "inverse-surface": "#31302f",
+                "tertiary": "#735c00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "md": "24px",
+                "xl": "80px",
+                "gutter": "24px",
+                "margin-mobile": "20px",
+                "sm": "12px",
+                "xs": "4px"
+        },
+        "fontFamily": {
+                "label-sm": ["Work Sans"],
+                "headline-md": ["Playfair Display"],
+                "body-lg": ["Source Serif 4"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "display-lg": ["Playfair Display"],
+                "body-md": ["Source Serif 4"],
+                "label-md": ["Work Sans"],
+                "headline-lg": ["Playfair Display"]
+        },
+        "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #fdf8f6;
+    }
+    .payment-tile:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+</style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-surface border-b border-outline-variant/30 sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Checkout</h1>
+</div>
+<div class="flex items-center">
+<button class="hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-xl max-w-6xl mx-auto w-full">
+<!-- Hero Total Section -->
+<div class="text-center mb-xl">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-[0.2em] mb-2">Total Due</p>
+<h2 class="font-display-lg text-display-lg text-primary mb-2">$31.35</h2>
+<div class="h-[2px] w-16 bg-on-primary-container mx-auto"></div>
+</div>
+<!-- Title -->
+<div class="w-full mb-md">
+<h3 class="font-headline-md text-headline-md text-center text-primary">Select Payment Method</h3>
+</div>
+<!-- Payment Selection Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full">
+<!-- QR Payment Tile -->
+<button class="payment-tile group flex flex-col items-center justify-center p-md bg-surface-container-low border border-outline-variant/50 rounded-lg hover:border-on-primary-container hover:shadow-md transition-all duration-300 min-h-[260px]">
+<div class="w-20 h-20 mb-6 flex items-center justify-center bg-secondary-container rounded-full text-on-secondary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined !text-4xl" data-icon="qr_code_2">qr_code_2</span>
+</div>
+<span class="font-headline-md text-xl text-primary mb-1">QR Payment</span>
+<span class="font-body-md text-sm text-on-surface-variant">Instant scan via KhmerQR</span>
+</button>
+<!-- Cash Tile -->
+<button class="payment-tile group flex flex-col items-center justify-center p-md bg-surface-container-low border border-outline-variant/50 rounded-lg hover:border-on-primary-container hover:shadow-md transition-all duration-300 min-h-[260px]">
+<div class="w-20 h-20 mb-6 flex items-center justify-center bg-secondary-container rounded-full text-on-secondary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined !text-4xl" data-icon="payments">payments</span>
+</div>
+<span class="font-headline-md text-xl text-primary mb-1">Cash</span>
+<span class="font-body-md text-sm text-on-surface-variant">Handled at counter</span>
+</button>
+<!-- Card Tile -->
+<button class="payment-tile group flex flex-col items-center justify-center p-md bg-surface-container-low border border-outline-variant/50 rounded-lg hover:border-on-primary-container hover:shadow-md transition-all duration-300 min-h-[260px]">
+<div class="w-20 h-20 mb-6 flex items-center justify-center bg-secondary-container rounded-full text-on-secondary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined !text-4xl" data-icon="credit_card">credit_card</span>
+</div>
+<span class="font-headline-md text-xl text-primary mb-1">Card</span>
+<span class="font-body-md text-sm text-on-surface-variant">Visa, Mastercard, UnionPay</span>
+</button>
+</div>
+<!-- Additional Details -->
+<div class="mt-xl w-full flex flex-col md:flex-row gap-lg items-start opacity-80">
+<div class="flex-1 border-l-2 border-on-primary-container pl-4">
+<h4 class="font-label-md text-label-md text-on-primary-container uppercase mb-2">Order Summary</h4>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-md text-sm">Subtotal (4 items)</span>
+<span class="font-body-md text-sm font-semibold">$28.50</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-sm">VAT (10%)</span>
+<span class="font-body-md text-sm font-semibold">$2.85</span>
+</div>
+</div>
+<div class="flex-1 flex gap-4 items-center">
+<div class="relative w-32 h-20 bg-surface-container-high overflow-hidden rounded-lg">
+<img alt="POS environment" class="w-full h-full object-cover sepia-[0.3] contrast-[1.1]" data-alt="A professional close-up of a sleek, black modern point-of-sale terminal on a marble countertop in a high-end bistro. The lighting is soft and warm, casting gentle shadows across the minimalist decor. A single glass of water and a small ceramic bowl sit in the blurred background, emphasizing a clean and sophisticated atmosphere. The image has a calm, editorial feel with high contrast and premium textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyoCn44KzFTgFIRzMcg4HyV7kDyZEuY9rU_C9YXHgFXclLvxvlJs34ZQzQSQD6PJyYE8c-MRyL_akT-rwkJaZnL0eLPqWmsBbmBqC_rvm3eBePn9hBN0RORTOd0p-lLKudbsNyB2q3dU8Gx_6djgF0DYngpyG6OmtwLGmaaTiUMlZbptqlJ4bjeGRr8WnAloIm5jU488eb2Mopd4ivpUevXg-V7eLi5kfRcLc2Ag6hJXoAFzCJ4-Yxwa1X3aq1bopdKe4xiv7oFD8">
+</div>
+<div>
+<p class="font-body-md text-sm italic text-on-surface-variant">"Precision in every transaction, elegance in every detail."</p>
+<p class="font-label-sm text-on-primary-container uppercase mt-1">— KhmerOS Hospitality</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer with Primary Action -->
+<footer class="border-t border-outline-variant/30 fixed bottom-0 left-0 right-0 z-50" style="background-color: rgb(42, 31, 26);">
+<div class="max-w-6xl mx-auto px-margin-mobile h-20 flex items-center justify-center">
+<button class="flex items-center gap-2 px-10 py-3 text-on-primary font-bold hover:bg-primary/90 transition-all active:scale-95 duration-150 rounded-none shadow-md" style="background-color: transparent; color: #fcf9f4;">
+<span class="material-symbols-outlined text-xl" data-icon="keyboard_return" style="color: #fcf9f4;">keyboard_return</span>
+<span class="uppercase tracking-widest text-label-md">Back to Order</span>
+</button>
+</div>
+</footer>
+<script>
+    document.querySelectorAll('.payment-tile').forEach(tile => {
+      tile.addEventListener('click', function() {
+        this.classList.add('bg-secondary-fixed');
+        setTimeout(() => {
+          this.classList.remove('bg-secondary-fixed');
+        }, 300);
+      });
+    });
+</script>
+</body></html>

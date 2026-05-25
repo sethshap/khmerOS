@@ -1,0 +1,306 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KhmerOS POS - Item Selection</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&amp;family=Source+Serif+4:wght@300..700&amp;family=Work+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-container": "#fed7ca",
+                "tertiary-fixed": "#ffe088",
+                "error-container": "#ffdad6",
+                "secondary-fixed": "#ffdbce",
+                "on-secondary-container": "#795c51",
+                "outline-variant": "#d3c3c0",
+                "on-tertiary-container": "#4e3d00",
+                "on-secondary-fixed": "#2b160f",
+                "tertiary-container": "#cba72f",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#fdf8f6",
+                "surface-container-highest": "#e5e2e0",
+                "surface-container-high": "#ebe7e5",
+                "on-tertiary-fixed-variant": "#574500",
+                "primary-container": "#3e2723",
+                "surface-tint": "#745853",
+                "on-primary-fixed": "#2b1613",
+                "on-surface-variant": "#504442",
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f4f0ee",
+                "error": "#ba1a1a",
+                "primary-fixed": "#ffdad4",
+                "on-tertiary-fixed": "#241a00",
+                "surface-dim": "#ddd9d7",
+                "on-background": "#1c1b1b",
+                "surface-variant": "#e5e2e0",
+                "tertiary-fixed-dim": "#e9c349",
+                "background": "#fdf8f6",
+                "on-primary-fixed-variant": "#5b403c",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#e3beb8",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#e4beb2",
+                "on-primary-container": "#ae8d87",
+                "surface-container-low": "#f7f3f1",
+                "surface": "#fdf8f6",
+                "primary": "#271310",
+                "on-tertiary": "#ffffff",
+                "surface-container": "#f1edeb",
+                "secondary": "#75584d",
+                "on-secondary-fixed-variant": "#5b4137",
+                "inverse-primary": "#e3beb8",
+                "outline": "#827472",
+                "on-surface": "#1c1b1b",
+                "inverse-surface": "#31302f",
+                "tertiary": "#735c00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "md": "24px",
+                "xl": "80px",
+                "gutter": "24px",
+                "margin-mobile": "20px",
+                "sm": "12px",
+                "xs": "4px"
+        },
+        "fontFamily": {
+                "label-sm": ["Work Sans"],
+                "headline-md": ["Playfair Display"],
+                "body-lg": ["Source Serif 4"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "display-lg": ["Playfair Display"],
+                "body-md": ["Source Serif 4"],
+                "label-md": ["Work Sans"],
+                "headline-lg": ["Playfair Display"]
+        },
+        "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf8f6;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .heritage-card-shadow {
+            border: 1px solid rgba(116, 88, 83, 0.1);
+            box-shadow: 0 2px 12px rgba(62, 39, 35, 0.05);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface min-h-screen flex flex-col" style="background-color: rgb(252, 249, 244);">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-[64px]">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container rounded-full p-2" style="color: rgb(74, 55, 40);">arrow_back</button>
+<h1 class="font-display-lg text-headline-md text-primary" style="color: rgb(74, 55, 40);">KhmerOS</h1>
+</div>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container rounded-full p-2" style="color: rgb(74, 55, 40);">settings</button>
+</header>
+<main class="flex-grow pb-40">
+<!-- Search Area -->
+<div class="px-margin-mobile pt-6 pb-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/50 rounded-xl focus:ring-1 focus:ring-secondary focus:border-secondary outline-none text-body-md" placeholder="Search menu items..." type="text">
+</div>
+</div>
+<!-- Category Chips -->
+<div class="px-margin-mobile mb-6 overflow-x-auto no-scrollbar flex gap-2 items-center py-2">
+<button class="flex-none px-6 py-2 rounded-full font-label-md bg-primary text-on-primary transition-all shadow-md" style="background-color: rgb(74, 55, 40);">
+            Mains
+        </button>
+<button class="flex-none px-6 py-2 rounded-full font-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-highest transition-all">
+            Snacks
+        </button>
+<button class="flex-none px-6 py-2 rounded-full font-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-highest transition-all">
+            Desserts
+        </button>
+<button class="flex-none px-6 py-2 rounded-full font-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-highest transition-all">
+            Drinks
+        </button>
+</div>
+<!-- Items List -->
+<div class="px-margin-mobile grid grid-cols-1 gap-4">
+<!-- Item Card 1 -->
+<div class="bg-surface-container-lowest heritage-card-shadow rounded-xl p-4 flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Beef Lok Lak" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-IpaG3vpwYMQt2hqV9WS0icDtd2bLAfHenjXQGBmYsSyTaF0Ggi2rke_pq7FQVVlbQy_UFPYG0H1FwzCmWnpgpRqFfbKZydEh-Dx0kn_B1eAz2jISeziLGESGsGrE07SCVBPNAoTa-E9mWG7YJ4xEYwGwK6NId7GQCd2nNMnbNXmbp7RVN7iP-40RgPc9vAa8rQbCPLDSz3L1y5Ki5Pe9FdDkywxvBD5Zz6uu4cyaanEYaj-rx5_6NkNRpYkxkydWfcv2KKyQLzP">
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Beef Lok Lak</h3>
+<p class="text-on-surface-variant text-[14px] italic opacity-70">ឡុកឡាក់សាច់គោ</p>
+</div>
+<span class="font-body-lg text-secondary font-bold">$12.50</span>
+</div>
+<div class="flex justify-end items-center mt-2 gap-3">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-[12px]">2</span>
+<button class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center active:scale-90 transition-transform shadow-sm">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container-lowest heritage-card-shadow rounded-xl p-4 flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Fish Amok" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD7G48M7t8eD8H4PeYxfijQmu1YnkEnfzPBvFZqsrJ-ppZLZ_Z7JstxGsZoPD1hqwa7eyxpaSV1K0AYhbpA6r5AoUACKjd1yKog_1_LeC99wiviBTPAyZyd_gsPUV2aDSWNIDH_wSDzF9G_sn6e3UYzfs6xXSgtv4KRhnkc5RN4L7UBGpIZHyUnny0ANCtiPF1pwCvIBePWIv3rA_P1Ma18Gc8IU-tegMcwFxF-Oax3aGTLvw-RYMXqP0XKf_iSx21xdp-8xSiajin">
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Fish Amok</h3>
+<p class="text-on-surface-variant text-[14px] italic opacity-70">អាម៉ុកត្រី</p>
+</div>
+<span class="font-body-lg text-secondary font-bold">$10.00</span>
+</div>
+<div class="flex justify-end items-center mt-2">
+<button class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item Card 4 (Out of Stock) -->
+<div class="bg-surface-container-low/50 border border-dashed border-outline-variant rounded-xl p-4 flex gap-4 items-center opacity-60">
+<div class="w-20 h-20 rounded-lg bg-surface-dim overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="no_meals">no_meals</span>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface-variant">Pomelo Salad</h3>
+<p class="text-on-surface-variant text-[14px] italic">ញាំក្រូចថ្លុង</p>
+</div>
+<span class="font-body-lg text-outline">$7.00</span>
+</div>
+<div class="flex justify-end items-center mt-2">
+<span class="font-label-sm text-error border border-error/30 px-2 py-0.5 rounded uppercase tracking-wider">Out of Stock</span>
+</div>
+</div>
+</div>
+<!-- Item Card 5 -->
+<div class="bg-surface-container-lowest heritage-card-shadow rounded-xl p-4 flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Grilled Chicken" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQN-t8wSRzdM9uuZkj-7nxtD2wMg21_zeruApOw7u2r6k9htwiK9YHqC19PL0Ln3bkeYoQ_HdjV783PdEJcNkPAupXJUu7m1GATJ8dmkrsiChiM9_MtQ7FkABYWDAf1Tyr_cIv94klSbH23rTom8vhTxtq64BRuQeYlGUIvEbr8uvyLz-mmv_hcvsgmTMzYwjKJQG5Thy6MbXZbHRqwCAhGMov3EeoK9D6huWwLx-EKuSwCIf7QFJOGuMJarrTsnGii05cAVcFCknh">
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Grilled Chicken</h3>
+<p class="text-on-surface-variant text-[14px] italic opacity-70">មាន់អាំង</p>
+</div>
+<span class="font-body-lg text-secondary font-bold">$15.00</span>
+</div>
+<div class="flex justify-end items-center mt-2">
+<button class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Subtotal Sticky Footer -->
+<div class="fixed bottom-[72px] left-0 w-full z-40 bg-surface/95 backdrop-blur-xl border-t border-outline-variant/30 px-margin-mobile py-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Subtotal</span>
+<span class="font-headline-md text-primary">$33.50</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative flex items-center justify-center text-on-surface-variant p-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-secondary text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full">3</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-primary/20 active:scale-95 hover:brightness-110 transition-all" onclick="animateSend()" style="background-color: rgb(74, 55, 40);">
+<span class="">Send to Kitchen</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 border-t border-outline-variant/30 px-2 pb-6 pt-2 flex justify-around items-center h-[72px]" style="background-color: rgb(42, 31, 26);">
+<a class="flex flex-col items-center justify-center p-1 hover:text-primary transition-colors" href="#" style="color: rgb(252, 249, 244);">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center border-t-2 p-1" href="#" style="color: #fcf9f4; border-color: #fcf9f4; border-top-width: 2px;">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span class="font-label-sm mt-1">POS</span>
+</a>
+<a class="flex flex-col items-center justify-center p-1 hover:text-primary transition-colors" href="#" style="color: rgb(252, 249, 244);">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-sm mt-1">Sales</span>
+</a>
+<a class="flex flex-col items-center justify-center p-1 hover:text-primary transition-colors" href="#" style="color: rgb(252, 249, 244);">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm mt-1">Stock</span>
+</a>
+<a class="flex flex-col items-center justify-center p-1 hover:text-primary transition-colors" href="#" style="color: rgb(252, 249, 244);">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm mt-1">More</span>
+</a>
+</nav>
+<script>
+    function animateSend() {
+        const btn = event.currentTarget;
+        const originalHtml = btn.innerHTML;
+        const originalBg = btn.className;
+        
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> <span>Processing...</span>';
+        
+        setTimeout(() => {
+            btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> <span>Sent!</span>';
+            btn.classList.add('bg-tertiary-container');
+            btn.classList.add('text-on-tertiary-container');
+            btn.classList.remove('bg-primary');
+            btn.classList.remove('text-on-primary');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHtml;
+                btn.className = originalBg;
+            }, 2000);
+        }, 1000);
+    }
+</script>
+
+
+</body></html>

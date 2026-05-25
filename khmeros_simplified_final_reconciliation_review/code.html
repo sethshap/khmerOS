@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cash-Out Summary | KhmerOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Three:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#d7c3b0",
+                    "on-tertiary-fixed-variant": "#524436",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fdddb9",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf9f4",
+                    "surface-container": "#f0ede8",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#dec1ac",
+                    "tertiary-fixed": "#f4dfcb",
+                    "surface": "#fcf9f4",
+                    "surface-container-high": "#ebe8e3",
+                    "on-primary-container": "#bba08c",
+                    "outline": "#80756d",
+                    "on-surface-variant": "#4e453e",
+                    "secondary-fixed": "#fdddb9",
+                    "on-background": "#1c1c19",
+                    "tertiary": "#2f2317",
+                    "on-primary-fixed": "#28180b",
+                    "on-tertiary-container": "#b5a290",
+                    "surface-tint": "#705a49",
+                    "outline-variant": "#d2c4bb",
+                    "on-secondary-fixed-variant": "#584329",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#fbddc7",
+                    "surface-container-low": "#f6f3ee",
+                    "primary": "#322214",
+                    "surface-container-highest": "#e5e2dd",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#4a3728",
+                    "on-surface": "#1c1c19",
+                    "tertiary-container": "#46392b",
+                    "primary-fixed-dim": "#dec1ac",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-fixed": "#281803",
+                    "on-primary-fixed-variant": "#574333",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a0e",
+                    "secondary-fixed-dim": "#e0c29f",
+                    "on-secondary-container": "#786044",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dcdad5",
+                    "secondary": "#715a3e",
+                    "inverse-surface": "#31302d",
+                    "surface-bright": "#fcf9f4",
+                    "inverse-on-surface": "#f3f0eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "container-max": "1120px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Source Sans Three"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-md": ["Source Sans Three"],
+                    "body-lg": ["Source Sans Three"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high transition-colors p-2 rounded-full active:opacity-80">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm tracking-tight text-primary">Reconciliation Summary</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+</header>
+<main class="flex-1 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-8 mb-24">
+<div class="max-w-2xl mx-auto space-y-10">
+<!-- Status Alert -->
+<div class="bg-error-container text-on-error-container p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined">warning</span>
+<p class="font-body-lg text-body-lg font-semibold">Cash Variance Detected</p>
+</div>
+<!-- Top Section: Gross Sales -->
+<section>
+<div class="flex items-baseline justify-between mb-4 border-b border-outline-variant pb-2">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant">TOTAL GROSS SALES (POS)</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">JUNE 15, 2024</span>
+</div>
+<div class="bg-surface-container p-6 rounded-lg">
+<p class="font-display-lg text-display-lg text-primary">$4,280.50</p>
+<p class="font-body-md text-on-surface-variant mt-1 italic opacity-75">All recorded transactions before deductions.</p>
+</div>
+</section>
+<!-- Deductions & Non-Cash -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-4 border-b border-outline-variant pb-2">DEDUCTIONS &amp; NON-CASH</h2>
+<ul class="space-y-4">
+<li class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Expenses Recognized</span>
+<span class="font-body-lg text-body-lg text-error">-$57.50</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg text-on-surface-variant">ABA (Digital)</span>
+<span class="font-body-lg text-body-lg">-$2,450.50</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Card Payments</span>
+<span class="font-body-lg text-body-lg">-$709.50</span>
+</li>
+</ul>
+</section>
+<!-- Simple Financial Summary -->
+<section class="pt-6 border-t-2 border-primary space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Expected Cash on Hand</p>
+<p class="font-headline-md text-headline-md text-primary">$1,063.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Actual Cash Counted</p>
+<p class="font-display-lg text-display-lg text-primary">$1,057.50</p>
+</div>
+</div>
+<div class="bg-error/10 border border-error/20 p-4 rounded flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-error">VARIANCE</span>
+<span class="font-headline-sm text-headline-sm text-error font-bold">-$5.50 SHORT</span>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-white py-4 px-6 rounded font-label-caps text-label-caps hover:bg-tertiary transition-all active:scale-[0.98] shadow-sm">
+                FINALIZE &amp; POST TO LEDGER
+            </button>
+<p class="mt-4 text-[10px] text-on-surface-variant uppercase tracking-widest opacity-60 text-center">
+                Authorized by Administrator 01
+            </p>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-primary dark:bg-tertiary border-t border-primary-container">
+<a class="flex flex-col items-center justify-center text-tertiary-fixed-dim opacity-70 hover:bg-primary-container transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span class="font-label-caps text-label-caps uppercase text-[10px]">Register</span>
+</a>
+<a class="flex flex-col items-center justify-center text-tertiary-fixed-dim opacity-70 hover:bg-primary-container transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-caps text-label-caps uppercase text-[10px]">History</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps uppercase text-[10px]">Reconcile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-tertiary-fixed-dim opacity-70 hover:bg-primary-container transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps uppercase text-[10px]">Settings</span>
+</a>
+</nav>
+<script>
+    const finalizeBtn = document.querySelector('button.bg-primary');
+    if(finalizeBtn) {
+        finalizeBtn.addEventListener('click', function() {
+            this.innerHTML = '<span class="flex items-center justify-center gap-2"><span class="animate-spin material-symbols-outlined">sync</span> PROCESSING...</span>';
+            setTimeout(() => {
+                this.innerHTML = 'POSTED SUCCESSFULLY';
+                this.classList.replace('bg-primary', 'bg-green-700');
+            }, 1500);
+        });
+    }
+</script>
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Serif+4:wght@400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fed7ca",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbce",
+                        "on-secondary-container": "#795c51",
+                        "outline-variant": "#d3c3c0",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-secondary-fixed": "#2b160f",
+                        "tertiary-container": "#cba72f",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fdf8f6",
+                        "surface-container-highest": "#e5e2e0",
+                        "surface-container-high": "#ebe7e5",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "primary-container": "#3e2723",
+                        "surface-tint": "#745853",
+                        "on-primary-fixed": "#2b1613",
+                        "on-surface-variant": "#504442",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f4f0ee",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdad4",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-dim": "#ddd9d7",
+                        "on-background": "#1c1b1b",
+                        "surface-variant": "#e5e2e0",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "background": "#fdf8f6",
+                        "on-primary-fixed-variant": "#5b403c",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#e3beb8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e4beb2",
+                        "on-primary-container": "#ae8d87",
+                        "surface-container-low": "#f7f3f1",
+                        "surface": "#fdf8f6",
+                        "primary": "#3e2723",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f1edeb",
+                        "secondary": "#75584d",
+                        "on-secondary-fixed-variant": "#5b4137",
+                        "inverse-primary": "#e3beb8",
+                        "outline": "#827472",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#31302f",
+                        "tertiary": "#735c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Work Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Source Serif 4"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Source Serif 4"],
+                        "label-md": ["Work Sans"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-[#4a3728] text-on-surface font-body-md min-h-screen flex items-center justify-center p-4">
+<!-- TopAppBar -->
+<!-- Main Content Canvas -->
+<main class="relative bg-[#fdf8f6] w-full max-w-lg rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"><button class="absolute top-4 right-4 p-2 hover:bg-surface-container-high rounded-full transition-colors z-10" onclick="window.history.back()"><span class="material-symbols-outlined text-primary">close</span></button><div class="px-8 pt-8 pb-6 border-b border-outline-variant bg-[#f1edeb]"><h1 class="font-headline-md text-headline-md text-primary mb-1">Choose Protein</h1><p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Refining Selection</p><h2 class="font-display-lg text-2xl md:text-3xl text-primary mt-1" style="font-family: 'Playfair Display', serif;">Traditional Amok</h2></div><div class="flex-1 overflow-y-auto p-8 space-y-4"><button class="group flex items-center justify-between w-full p-4 bg-surface-container-low rounded-xl border border-outline-variant transition-all hover:border-secondary active:scale-[0.98]" onclick="selectProtein(this)"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">egg_alt</span></div><div class="text-left"><h3 class="font-bold text-lg text-primary">Chicken</h3><p class="text-xs text-on-surface-variant uppercase">Organic Farm Poultry</p></div></div><p class="font-bold text-secondary">$8.50</p></button><button class="group flex items-center justify-between w-full p-4 bg-surface-container-low rounded-xl border border-outline-variant transition-all hover:border-secondary active:scale-[0.98]" onclick="selectProtein(this)"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">restaurant</span></div><div class="text-left"><h3 class="font-bold text-lg text-primary">Beef</h3><p class="text-xs text-on-surface-variant uppercase">Angkor Tenderloin</p></div></div><p class="font-bold text-secondary">$10.50</p></button><button class="group flex items-center justify-between w-full p-4 bg-surface-container-low rounded-xl border border-outline-variant transition-all hover:border-secondary active:scale-[0.98]" onclick="selectProtein(this)"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">water_drop</span></div><div class="text-left"><h3 class="font-bold text-lg text-primary">Shrimp</h3><p class="text-xs text-on-surface-variant uppercase">Mekong River Fresh</p></div></div><p class="font-bold text-secondary">$11.50</p></button><button class="group flex items-center justify-between w-full p-4 bg-surface-container-low rounded-xl border border-outline-variant transition-all hover:border-secondary active:scale-[0.98]" onclick="selectProtein(this)"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">set_meal</span></div><div class="text-left"><h3 class="font-bold text-lg text-primary">Pork</h3><p class="text-xs text-on-surface-variant uppercase">Slow-Cooked Belly</p></div></div><p class="font-bold text-secondary">$9.00</p></button></div><div class="p-6 bg-white border-t border-outline-variant opacity-0 transform translate-y-4 transition-all duration-300" id="selection-footer"><div class="bg-primary text-on-primary p-4 rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="text-[10px] uppercase tracking-tighter opacity-70">SELECTED PROTEIN</span><span class="font-bold" id="selected-text">-</span></div><button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">Add to Order</button></div></div></main>
+<!-- BottomNavBar -->
+<!-- Spacer for Bottom Nav -->
+<script>
+        function selectProtein(element) {
+            // Remove active classes from all buttons
+            document.querySelectorAll('button[onclick="selectProtein(this)"]').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-secondary', 'bg-surface-container-high', 'border-secondary');
+                btn.classList.add('bg-surface-container-low', 'border-outline-variant');
+            });
+
+            // Add active visual cue to selected button
+            element.classList.remove('bg-surface-container-low', 'border-outline-variant');
+            element.classList.add('ring-2', 'ring-secondary', 'bg-surface-container-high', 'border-secondary');
+            
+            // Show the footer
+            const footer = document.getElementById('selection-footer');
+            const selectedText = document.getElementById('selected-text');
+            const proteinName = element.querySelector('h3').innerText;
+            const proteinPrice = element.querySelector('.font-body-lg').innerText;
+
+            selectedText.innerText = `${proteinName} (${proteinPrice})`;
+            footer.classList.remove('opacity-0', 'translate-y-4');
+            footer.classList.add('opacity-100', 'translate-y-0');
+
+            // Haptic-like feedback animation
+            element.animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(0.96)' },
+                { transform: 'scale(1)' }
+            ], {
+                duration: 150,
+                easing: 'ease-out'
+            });
+        }
+    </script>
+</body></html>

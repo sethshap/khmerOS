@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KhmerOS - Table Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#281803",
+                    "inverse-primary": "#dec1ac",
+                    "surface-bright": "#fcf9f4",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#d2c4bb",
+                    "on-surface": "#1c1c19",
+                    "surface-container-high": "#ebe8e3",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#31302d",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf9f4",
+                    "secondary-container": "#fdddb9",
+                    "surface-tint": "#705a49",
+                    "on-secondary-container": "#786044",
+                    "on-surface-variant": "#4e453e",
+                    "error": "#ba1a1a",
+                    "tertiary": "#2f2317",
+                    "surface-container-low": "#f6f3ee",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-fixed-variant": "#584329",
+                    "on-primary-container": "#bba08c",
+                    "secondary-fixed-dim": "#e0c29f",
+                    "primary-fixed": "#fbddc7",
+                    "on-primary-fixed": "#28180b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a0e",
+                    "tertiary-container": "#46392b",
+                    "surface-container": "#f0ede8",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-dim": "#dcdad5",
+                    "primary-fixed-dim": "#dec1ac",
+                    "on-primary-fixed-variant": "#574333",
+                    "on-tertiary-fixed-variant": "#524436",
+                    "secondary-fixed": "#fdddb9",
+                    "tertiary-fixed-dim": "#d7c3b0",
+                    "primary": "#322214",
+                    "on-tertiary-container": "#b5a290",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1c1c19",
+                    "tertiary-fixed": "#f4dfcb",
+                    "outline": "#80756d",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f3f0eb",
+                    "background": "#fcf9f4",
+                    "secondary": "#715a3e",
+                    "primary-container": "#4a3728"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1120px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-padding": "20px",
+                    "touch-target-lg": "64px",
+                    "touch-target-min": "48px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Source Sans 3"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "body-lg": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "display-lg-mobile": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-primary/10 flex justify-between items-center px-container-padding h-touch-target-lg">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70" data-icon="close">close</button>
+<h1 class="font-headline-md text-headline-sm text-primary tracking-tight">KhmerOS</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Open Tabs Bar -->
+<section class="bg-surface-bright border-b border-outline-variant/30 py-3 overflow-hidden">
+<div class="flex items-center gap-3 px-container-padding overflow-x-auto hide-scrollbar"><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">S1</span><span class="font-label-caps text-[10px] text-on-surface-variant">2 GUESTS - $50.00</span></div><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-secondary-container border border-secondary rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">S2</span><span class="font-label-caps text-[10px] text-on-secondary-container">2 GUESTS • $0.00</span></div><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">F2</span><span class="font-label-caps text-[10px] text-on-surface-variant">1 GUEST • $89.00</span></div><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">B4</span><span class="font-label-caps text-[10px] text-on-surface-variant">4 GUESTS • $210.15</span></div><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">D12</span><span class="font-label-caps text-[10px] text-on-surface-variant">2 GUESTS • $45.00</span></div><div class="flex-shrink-0 flex flex-col justify-center px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg min-w-[100px]"><span class="font-headline-md text-headline-md text-primary">S5</span><span class="font-label-caps text-[10px] text-on-surface-variant">2 GUESTS • $32.00</span></div></div>
+</section>
+<main class="max-w-4xl mx-auto px-container-padding space-y-8 pt-2">
+<!-- Quick Review Summary (Moved to Top) -->
+<!-- Table Selection Area -->
+<div class="space-y-4">
+<div>
+<h2 class="font-headline-md text-primary text-xl">Table Selection</h2>
+<p class="font-body-md text-on-surface-variant italic">Main Dining Hall</p>
+</div>
+<!-- Zone Tabs & Walk-in -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex bg-surface-container-high p-1 rounded-lg border border-outline-variant/30">
+<button class="font-label-caps rounded bg-surface shadow-sm text-primary uppercase px-8 py-4 text-body-md">Dining</button>
+<button class="font-label-caps rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors uppercase px-8 py-4 text-body-md">Bar</button>
+<button class="font-label-caps rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors uppercase px-8 py-4 text-body-md">Front</button>
+<button class="font-label-caps rounded text-on-surface-variant hover:bg-surface-container-highest transition-colors uppercase px-8 py-4 text-body-md">Back</button>
+</div>
+<button class="ml-auto flex items-center gap-2 px-6 py-2 border border-secondary text-secondary rounded-lg font-label-caps text-label-caps uppercase hover:bg-secondary-container transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions_walk">directions_walk</span>
+                    Walk-in
+                </button>
+</div>
+<!-- Table Grid -->
+<div class="grid grid-cols-3 gap-4">
+<!-- Occupied Table -->
+<button class="border border-tertiary-container/40 bg-tertiary-container/5 rounded-lg flex flex-col items-center justify-center relative overflow-hidden group active:scale-95 transition-transform aspect-square">
+<div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-headline-md text-headline-sm text-primary">S1</span>
+<span class="font-label-caps text-[10px] text-tertiary uppercase">Occupied</span>
+</button>
+<!-- Selected Table -->
+<button class="border border-primary bg-surface-container-high rounded-lg flex flex-col items-center justify-center active:scale-95 transition-transform shadow-sm aspect-square">
+<span class="font-headline-md text-headline-sm text-primary font-bold">S2</span>
+<span class="font-label-caps text-[10px] text-primary uppercase font-bold">Selected</span>
+</button>
+<!-- Available Table -->
+<button class="border border-outline-variant/40 bg-surface-container-lowest rounded-lg flex flex-col items-center justify-center hover:border-secondary/40 active:scale-95 transition-transform aspect-square">
+<span class="font-headline-md text-headline-sm text-primary/40">S3</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant/40 uppercase">2 Seats</span>
+</button>
+<!-- Available Table -->
+<button class="border border-outline-variant/40 bg-surface-container-lowest rounded-lg flex flex-col items-center justify-center hover:border-secondary/40 active:scale-95 transition-transform aspect-square">
+<span class="font-headline-md text-headline-sm text-primary/40">S4</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant/40 uppercase">4 Seats</span>
+</button>
+<!-- Occupied Table -->
+<button class="border border-tertiary-container/40 bg-tertiary-container/5 rounded-lg flex flex-col items-center justify-center relative active:scale-95 transition-transform aspect-square">
+<div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-headline-md text-headline-sm text-primary">S5</span>
+<span class="font-label-caps text-[10px] text-tertiary uppercase">Occupied</span>
+</button>
+<!-- Available Table -->
+<button class="border border-outline-variant/40 bg-surface-container-lowest rounded-lg flex flex-col items-center justify-center hover:border-secondary/40 active:scale-95 transition-transform aspect-square">
+<span class="font-headline-md text-headline-sm text-primary/40">S6</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant/40 uppercase">2 Seats</span>
+</button>
+</div>
+</div>
+<!-- Guest Count & Reservation Info -->
+<div class="space-y-8">
+<div class="space-y-4">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase tracking-widest">Number of Guests</label>
+<div class="grid grid-cols-5 md:grid-cols-9 gap-2">
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">1</button>
+<button class="h-touch-target-min border-2 border-primary-container bg-primary-container text-white rounded flex items-center justify-center font-body-lg text-body-lg">2</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">3</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">4</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">5</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">6</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">7</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">8</button>
+<button class="h-touch-target-min border border-outline-variant rounded flex items-center justify-center font-body-lg text-body-lg text-primary hover:border-secondary transition-colors">+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase" for="customer-name">Customer Name (Optional)</label>
+<input class="w-full h-12 bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-secondary font-body-md placeholder:text-outline-variant transition-all text-primary" id="customer-name" placeholder="Enter guest name..." type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase" for="phone">Phone</label>
+<input class="w-full h-12 bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-secondary font-body-md placeholder:text-outline-variant transition-all text-primary" id="phone" placeholder="+1 (555) 000-0000" type="tel">
+</div>
+</div>
+</div>
+<div class="pt-8 pb-12">
+<button class="w-full h-touch-target-lg bg-surface-container-highest text-primary font-headline-sm rounded-lg flex items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-variant transition-all">
+                Open Full Menu
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main><nav class="fixed bottom-0 left-0 right-0 bg-primary-container border-t border-white/10 h-20 flex items-center justify-around px-4 z-50" style="background-color: rgb(42, 31, 26); border-color: rgba(255, 255, 255, 0.05);">
+  <button class="flex flex-col items-center gap-1 text-primary-fixed/60" style="color: rgba(252, 249, 244, 0.6);">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-caps text-[10px] uppercase">Home</span>
+  </button>
+  <button class="flex flex-col items-center gap-1 text-primary" style="color: rgb(252, 249, 244);">
+    <div class="bg-primary/20 rounded-lg w-12 h-12 flex items-center justify-center mb-1"><span class="material-symbols-outlined" style="color: #fcf9f4;">table_restaurant</span></div>
+    <span class="font-label-caps text-[10px] uppercase" style="color: #fcf9f4;">Floor Plan</span>
+  </button>
+  <button class="flex flex-col items-center gap-1 text-primary-fixed/60" style="color: rgba(252, 249, 244, 0.6);">
+    <span class="material-symbols-outlined">event_available</span>
+    <span class="font-label-caps text-[10px] uppercase">Reservations</span>
+  </button>
+  <button class="flex flex-col items-center gap-1 text-primary-fixed/60" style="color: rgba(252, 249, 244, 0.6);">
+    <span class="material-symbols-outlined">more_horiz</span>
+    <span class="font-label-caps text-[10px] uppercase">More</span>
+  </button>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-1/3 h-full opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="A moody, high-contrast black and white photography of a sophisticated bistro interior. The focus is on the clean lines of wooden tables and the soft reflection of light on glassware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdsnrjF8rl_GUy_n7pAxnbK_ZBbotGu8qw-B5FjurU63ix_I0p_wgQpeT1c7K-qt_OtG_KmhaYncM7CAJzI0b2ZmtFyL1vGJ4T5YDnn9IjM7DzzAIsw_0FsiPBz2hYVpwa7l0KE5i6PuL9bSHsw5eB4EanbAE-Te86KyUgh06uLhTmy9EgLKkRBavlWIvBLysXlhcXqhdAfXfMz4YeJCpVSX7-HErDyGJX8eXE6WbjJaVXnjqJbfIXhYgM3AYoe1rHmvOlLH9Sk8Y">
+</div>
+<script>
+        // Simple interactivity for demonstration
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (!this.disabled && !this.classList.contains('cursor-not-allowed')) {
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 100);
+                }
+            });
+        });
+
+        // Zone tab selection logic
+        const zoneTabs = document.querySelectorAll('.inline-flex button');
+        zoneTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                zoneTabs.forEach(t => {
+                    t.classList.remove('bg-surface', 'shadow-sm', 'text-primary');
+                    t.classList.add('text-on-surface-variant');
+                });
+                tab.classList.add('bg-surface', 'shadow-sm', 'text-primary');
+                tab.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+
+
+</body></html>

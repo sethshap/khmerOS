@@ -1,0 +1,263 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KhmerOS - Shift Close</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#322214",
+                        "surface-container-highest": "#e5e2dd",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "surface-variant": "#e5e2dd",
+                        "outline-variant": "#d2c4bb",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ebe8e3",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1c19",
+                        "on-secondary-fixed": "#281803",
+                        "primary-fixed-dim": "#dec1ac",
+                        "on-secondary-fixed-variant": "#584329",
+                        "on-secondary-container": "#786044",
+                        "on-primary-fixed": "#28180b",
+                        "surface-container": "#f0ede8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "on-surface": "#1c1c19",
+                        "secondary": "#715a3e",
+                        "inverse-on-surface": "#f3f0eb",
+                        "on-tertiary-container": "#b5a290",
+                        "tertiary": "#2f2317",
+                        "background": "#fcf9f4",
+                        "tertiary-fixed": "#f4dfcb",
+                        "on-tertiary-fixed": "#241a0e",
+                        "tertiary-container": "#46392b",
+                        "secondary-container": "#fdddb9",
+                        "inverse-surface": "#31302d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#fdddb9",
+                        "primary-container": "#4a3728",
+                        "on-surface-variant": "#4e453e",
+                        "secondary-fixed-dim": "#e0c29f",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#574333",
+                        "surface-dim": "#dcdad5",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "surface-tint": "#705a49",
+                        "outline": "#80756d",
+                        "surface-bright": "#fcf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "primary-fixed": "#fbddc7",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#dec1ac",
+                        "on-primary-container": "#bba08c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1120px",
+                        "margin-mobile": "20px",
+                        "touch-target-lg": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-md": ["Source Sans 3"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "label-caps": ["Source Sans 3"],
+                        "body-lg": ["Source Sans 3"],
+                        "headline-sm": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .asymmetric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-on-surface/10 flex items-center justify-between px-gutter h-touch-target-lg">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-low transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Daily Reconciliation</h1>
+</div>
+<button class="hover:bg-surface-container-low transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+</button>
+</header>
+<main class="pt-[88px] pb-[100px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Screen Identity Header -->
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block mb-2">Process Step 01</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">Shift Close: POS Operator</h2>
+<div class="w-16 h-1 bg-primary mt-6"></div>
+</div>
+<!-- Sales Summary Section (Editorial Bento) -->
+<section class="asymmetric-grid mb-16">
+<!-- Major Metric -->
+<div class="bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">Gross Session Sales</p>
+<p class="font-display-lg text-display-lg text-primary">$4,280.50</p>
+</div>
+<div class="mt-12 flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="info">info</span>
+<span class="text-[14px]">Calculated from 42 completed transactions</span>
+</div>
+</div>
+<!-- Minor Metrics Stack -->
+<div class="flex flex-col gap-6">
+<div class="bg-surface-container border border-outline-variant p-6">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Declared Tips</p>
+<p class="font-headline-sm text-headline-sm text-secondary">$342.15</p>
+</div>
+<div class="bg-primary text-on-primary p-6">
+<p class="font-label-caps text-label-caps text-on-primary-container uppercase mb-2">Net Expected Deposit</p>
+<p class="font-headline-sm text-headline-sm text-on-primary">$4,622.65</p>
+</div>
+</div>
+</section>
+<!-- Pull Quote Narrative -->
+<div class="border-l-4 border-primary pl-8 py-4 mb-16 italic font-display-lg text-headline-sm text-on-surface-variant max-w-2xl">
+            "Accuracy in reconciliation is the final signature of a professional shift. Ensure every slip is accounted for before counting the vault."
+        </div>
+<!-- Action & Checklist -->
+<div class="grid md:grid-cols-12 gap-12 items-start">
+<!-- Checklist (Editorial Style) -->
+<div class="md:col-span-7">
+<h3 class="font-label-caps text-label-caps text-secondary uppercase mb-6">Pre-Counting Checklist</h3>
+<div class="border-y border-outline-variant/30">
+<div class="checklist-item flex items-center justify-between py-6 border-b border-outline-variant/30 group cursor-pointer hover:bg-surface-container-lowest transition-colors px-4 -mx-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+<span class="font-body-lg text-body-lg text-on-surface">Settle All Open Tables</span>
+</div>
+<span class="text-secondary font-label-caps text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">REQUIRED</span>
+</div>
+<div class="checklist-item flex items-center justify-between py-6 border-b border-outline-variant/30 group cursor-pointer hover:bg-surface-container-lowest transition-colors px-4 -mx-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+<span class="font-body-lg text-body-lg text-on-surface">Print Merchant Copies</span>
+</div>
+<span class="text-secondary font-label-caps text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">REQUIRED</span>
+</div>
+<div class="checklist-item flex items-center justify-between py-6 border-b border-outline-variant/30 group cursor-pointer hover:bg-surface-container-lowest transition-colors px-4 -mx-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+<span class="font-body-lg text-body-lg text-on-surface">Finalize Tips</span>
+</div>
+<span class="text-secondary font-label-caps text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">REQUIRED</span>
+</div>
+</div>
+</div>
+<!-- Primary Action Button -->
+<div class="md:col-span-5 flex flex-col gap-4 sticky top-28">
+<button class="bg-primary text-on-primary w-full h-16 flex items-center justify-center gap-3 hover:opacity-90 active:scale-95 transition-all duration-150 rounded-none shadow-sm" onclick="this.classList.add('scale-95')">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps uppercase text-[14px]">Start Cash Count</span>
+</button>
+<p class="text-center text-on-surface-variant font-body-md text-[14px] px-8">
+                    By starting the count, you confirm that all previous sales data is accurate and ready for audit.
+                </p>
+<!-- Background Decorative Element (Atmospheric) -->
+<div class="mt-8 border border-outline-variant/50 p-6 flex flex-col items-center justify-center text-center opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Financial Ledger" class="w-24 h-24 object-cover mb-4 grayscale" data-alt="A macro close-up of a vintage financial ledger with handwritten ink numbers and elegant calligraphy. The paper is aged cream-colored parchment. The lighting is soft, warm, and cinematic, creating a nostalgic heritage feel. The composition is artistic and minimalist, emphasizing the texture of the paper and the deep brown ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAY_bsi-1i542wRylUPZNf5glLfeDvrwIr-bEl3OdqfOETkhcetBlXxdVCblAenTDMrWyoxYMCsv14nLkzgyRuFdJQ0eF8Jx0QA7lsclpX_frC4ZlPil-TKqh10AYlrpPe5n_oDfnWG-l6cagLNgUAnE3NkFwyrsv7hy0BezWNliYI_YoythkLc0QK_gaKxJAY7qrODK0fvBYlihHq8i6aN-365z_x_d1hdTCbPqAE6rPXyVEXjgmLzWPOurOsUl74CN4LqukGMwnO">
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Operator ID: KhmerOS-4492</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-touch-target-lg px-container-padding bg-surface border-t border-on-surface/10 z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-highest/50 transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span class="font-label-md text-label-md">Register</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-highest/50 transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-bold hover:bg-surface-container-highest/50 transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Reconcile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-highest/50 transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<script>
+        // Simple Interaction: Toggle Checklist Items
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const icon = item.querySelector('.material-symbols-outlined');
+                const text = item.querySelector('.text-on-surface');
+                if (icon.innerText === 'check_box_outline_blank') {
+                    icon.innerText = 'check_box';
+                    icon.classList.remove('text-outline');
+                    icon.classList.add('text-secondary');
+                    text.classList.add('line-through', 'opacity-50');
+                } else {
+                    icon.innerText = 'check_box_outline_blank';
+                    icon.classList.add('text-outline');
+                    icon.classList.remove('text-secondary');
+                    text.classList.remove('line-through', 'opacity-50');
+                }
+            });
+        });
+
+        // Atmospheric Micro-interaction
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            // Very subtle background movement
+            document.body.style.backgroundPosition = `${x * 10}px ${y * 10}px`;
+        });
+    </script>
+</body></html>

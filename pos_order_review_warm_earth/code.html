@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KhmerOS POS - Order Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Serif+4:wght@400;600&amp;family=Work+Sans:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-container": "#fed7ca",
+                "tertiary-fixed": "#ffe088",
+                "error-container": "#ffdad6",
+                "secondary-fixed": "#ffdbce",
+                "on-secondary-container": "#795c51",
+                "outline-variant": "#d3c3c0",
+                "on-tertiary-container": "#4e3d00",
+                "on-secondary-fixed": "#2b160f",
+                "tertiary-container": "#cba72f",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#fdf8f6",
+                "surface-container-highest": "#e5e2e0",
+                "surface-container-high": "#ebe7e5",
+                "on-tertiary-fixed-variant": "#574500",
+                "primary-container": "#3e2723",
+                "surface-tint": "#745853",
+                "on-primary-fixed": "#2b1613",
+                "on-surface-variant": "#504442",
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f4f0ee",
+                "error": "#ba1a1a",
+                "primary-fixed": "#ffdad4",
+                "on-tertiary-fixed": "#241a00",
+                "surface-dim": "#ddd9d7",
+                "on-background": "#1c1b1b",
+                "surface-variant": "#e5e2e0",
+                "tertiary-fixed-dim": "#e9c349",
+                "background": "#fdf8f6",
+                "on-primary-fixed-variant": "#5b403c",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#e3beb8",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#e4beb2",
+                "on-primary-container": "#ae8d87",
+                "surface-container-low": "#f7f3f1",
+                "surface": "#fdf8f6",
+                "primary": "#271310",
+                "on-tertiary": "#ffffff",
+                "surface-container": "#f1edeb",
+                "secondary": "#75584d",
+                "on-secondary-fixed-variant": "#5b4137",
+                "inverse-primary": "#e3beb8",
+                "outline": "#827472",
+                "on-surface": "#1c1b1b",
+                "inverse-surface": "#31302f",
+                "tertiary": "#735c00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "md": "24px",
+                "xl": "80px",
+                "gutter": "24px",
+                "margin-mobile": "20px",
+                "sm": "12px",
+                "xs": "4px"
+        },
+        "fontFamily": {
+                "label-sm": [
+                        "Work Sans"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Source Serif 4"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Source Serif 4"
+                ],
+                "label-md": [
+                        "Work Sans"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.08em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #fdf8f6;
+    color: #1c1b1b;
+    -webkit-font-smoothing: antialiased
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAafxhHXK1EyMB5pvc_KTrw-wUnHtVGrbjTDGa7bmgd4IPiEhusfBjQOzaJR7jbkwgZesLdCUB5JH0eIOobcd8pVV5GRqlc4kxfjLvSSXVryE2jgeVMGXtvtObFhfz8WfX7p0orIqG9Auy_XljErhzxzI6DkZcw6feDh5HnfRvKVnTmgUwgbkHnJqaf_uC01iyWWyLniF6csiACcfd-vVCFPMSbOeEE36brshjAuzU90vznhnCDiN7BXC5qNlQEy5s3rw_LnorOlxA);
+    background-blend-mode: overlay;
+    }
+.custom-scroll::-webkit-scrollbar {
+    width: 4px
+    }
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent
+    }
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #e5e2e0;
+    border-radius: 10px
+    }
+</style>
+</head>
+<body class="flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 border-b border-outline-variant bg-surface-container-low flex items-center px-margin-mobile h-16 z-30">
+<button class="mr-gutter text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Order Review</h1>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto custom-scroll paper-texture pb-32">
+<div class="max-w-4xl mx-auto px-margin-mobile py-lg">
+<div class="mb-10">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">TABLE 04 • GUEST COUNT: 2</p>
+<div class="h-[2px] w-12 bg-secondary mb-gutter"></div>
+</div>
+<!-- Ticket Items Grid -->
+<div class="space-y-gutter">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex gap-gutter transition-all hover:border-secondary/30">
+<div class="w-24 h-24 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.1]" data-alt="A beautifully plated Beef Lok Lak dish in a high-end restaurant setting. The tender cubes of stir-fried beef are glazed in a rich, dark sauce and served over a bed of fresh watercress and sliced tomatoes. A side of jasmine rice is neatly shaped. The lighting is soft and warm, highlighting the textures of the meat and fresh vegetables against a minimalist cream-colored plate. The overall aesthetic is elegant and heritage-inspired." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLLyIo4NqybaOG8prpJiLmi9aaO94NCBhgx9fXWDIeluaBCago_NbKzPo2DG2lRaYBttgfIcDEnUoW2_QueCdxIpCGn1mt6PDTVhZXtHhgeKx4J0wicD3daH4mtMVlT-8XWfRGhPP9_mWqsZBK8RXRRILedxsz7HubmeXgd4LtsnZ8GV7pdxlv2fxYfSO88BU6sb0_b7_YtPRcF82z_7z_HQjoCCXI6vL1cQj76sF1JkYnyCYAjxMZACxZzua3OhvwQumwMgeHIHw">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-xl text-on-surface leading-tight">Beef Lok Lak</h3>
+<ul class="mt-xs space-y-0.5">
+<li class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1 h-1 bg-secondary rounded-full"></span> Medium Spice
+                                    </li>
+<li class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1 h-1 bg-secondary rounded-full"></span> Extra Beef (+$3.00)
+                                    </li>
+<li class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1 h-1 bg-secondary rounded-full"></span> Fried Egg (+$1.00)
+                                    </li>
+</ul>
+</div>
+<span class="font-label-md text-body-md font-bold text-on-surface">$16.50</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex gap-gutter transition-all hover:border-secondary/30">
+<div class="w-24 h-24 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.1]" data-alt="Traditional Cambodian Amok served in a rustic ceramic bowl. The creamy, golden fish curry is garnished with kaffir lime leaves and fresh red chili slivers. Large, succulent shrimp are visible in the rich coconut milk base. The background is a soft, out-of-focus wooden bistro table. The mood is authentic and comforting, with high-contrast, clean lighting that emphasizes the vibrant colors of the herbs and curry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABecwQxcMVoTlAKVMLWnlkac-isVKWjQ8AQZ2O-cm4RJHjA2ip2W08mQYXep2XdmjesxNdcc_hHVvea5T2bLe13PQbpI8w6O73rUxn8nsZWHvNuOxHhxWgXOQFl6W5zmBG-0GZMIRxPtB5GUujjNvLHZzW8Ez5MfQ3ormm0rvEuhc96ErJNUmE0s2oiahajIvkwNBF4YFmHb4ohezS9isXccyJBxC3lUa4UPub3_bQQafGIVltFXvy9VblYnj-_aR-Ja0sbKQLL0g">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-xl text-on-surface leading-tight">Traditional Amok</h3>
+<ul class="mt-xs space-y-0.5">
+<li class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1 h-1 bg-secondary rounded-full"></span> Shrimp (+$1.00)
+                                    </li>
+</ul>
+</div>
+<span class="font-label-md text-body-md font-bold text-on-surface">$11.50</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex gap-gutter transition-all hover:border-secondary/30">
+<div class="w-24 h-24 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.1]" data-alt="A classic espresso shot in a minimalist white porcelain cup with a thick, golden crema on top. The cup sits on a matching saucer on a natural stone countertop. The lighting is precise, casting soft shadows that define the shape of the cup and the texture of the stone. The color palette is composed of creamy whites and rich coffee browns, creating a focused, high-performance utility aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6YZiwnBPlkxGYBfKiYa8oIOEJ1CxCixj0eFqlLLKDLyNu2wweJuzw2lqQ8A5TaYtb56jozo4buscvWFutoroabE9_B-_Lnx1yBTMcrkMBYmQrJ31V66pjvi8hSGchUtWYI_qFuwf7LiJd00l02IjcRL7gT1CdzKCt6J1knBDNt0ZFTI84M9XxAqJ3AOxbZbJtu2oKQZIGXxMp4LoSnbHD9fbPlRzIu2WsweoKC2r-Iuvkr-tIOTzcaMgBFKyZnrNrhu26EmyaChE">
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-xl text-on-surface leading-tight">Classic Espresso</h3>
+<span class="font-label-md text-body-md font-bold text-on-surface">$3.50</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Section -->
+<div class="mt-xl pt-md border-t border-outline-variant space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-label-md text-on-surface">$28.50</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Tax (10%)</span>
+<span class="font-label-md text-on-surface">$2.85</span>
+</div>
+<div class="pt-base flex justify-between items-center">
+<span class="font-headline-md text-2xl text-primary">Total</span>
+<span class="font-headline-md text-2xl text-primary">$31.35</span>
+</div>
+</div>
+<!-- Notes / Tip Placeholder -->
+<div class="mt-lg p-md bg-secondary-container border border-on-secondary-container/10 rounded-xl">
+<div class="flex items-center gap-2 text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+<p class="font-label-md">Server: Samnang K.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Actions) -->
+<footer class="fixed bottom-0 w-full z-50 shadow-lg border-t border-outline-variant bg-surface-container-high flex justify-between items-center px-margin-mobile py-md gap-md">
+<!-- Print Receipt Button -->
+<button class="flex-1 flex items-center justify-center gap-2 text-secondary border border-secondary rounded-full h-12 hover:bg-secondary-fixed-dim transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+<span class="font-label-md">Print Receipt</span>
+</button>
+<!-- Confirm & Pay Button -->
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary rounded-full h-12 hover:bg-primary-container transition-colors active:scale-95 duration-200 shadow-md">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md">Confirm &amp; Pay</span>
+</button>
+</footer>
+<!-- Atmosphere micro-interaction -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.96)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

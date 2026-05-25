@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KhmerOS - End-of-Day Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+3:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#fcf9f4",
+            "primary-fixed": "#fbddc7",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#524436",
+            "surface-container-low": "#f6f3ee",
+            "secondary": "#715a3e",
+            "inverse-on-surface": "#f3f0eb",
+            "on-error": "#ffffff",
+            "inverse-surface": "#31302d",
+            "secondary-fixed-dim": "#e0c29f",
+            "on-surface": "#1c1c19",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#46392b",
+            "on-secondary-fixed-variant": "#584329",
+            "secondary-fixed": "#fdddb9",
+            "on-error-container": "#93000a",
+            "surface-container": "#f0ede8",
+            "tertiary-fixed-dim": "#d7c3b0",
+            "on-tertiary-fixed": "#241a0e",
+            "error": "#ba1a1a",
+            "surface-variant": "#e5e2dd",
+            "outline": "#80756d",
+            "on-background": "#1c1c19",
+            "surface-container-high": "#ebe8e3",
+            "primary": "#322214",
+            "primary-container": "#4a3728",
+            "on-tertiary": "#ffffff",
+            "background": "#fcf9f4",
+            "on-primary-fixed": "#28180b",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#dec1ac",
+            "on-secondary-fixed": "#281803",
+            "error-container": "#ffdad6",
+            "surface-dim": "#dcdad5",
+            "on-tertiary-container": "#b5a290",
+            "inverse-primary": "#dec1ac",
+            "outline-variant": "#d2c4bb",
+            "on-primary-fixed-variant": "#574333",
+            "on-primary-container": "#bba08c",
+            "tertiary": "#2f2317",
+            "surface-tint": "#705a49",
+            "surface-container-highest": "#e5e2dd",
+            "secondary-container": "#fdddb9",
+            "on-surface-variant": "#4e453e",
+            "on-secondary-container": "#786044",
+            "tertiary-fixed": "#f4dfcb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "margin-desktop": "64px",
+            "unit": "8px",
+            "margin-mobile": "20px",
+            "container-max": "1120px",
+            "touch-target-lg": "64px",
+            "container-padding": "24px"
+          },
+          "fontFamily": {
+            "headline-sm": ["Libre Caslon Text"],
+            "label-caps": ["Source Sans 3"],
+            "body-md": ["Source Sans 3"],
+            "body-lg": ["Source Sans 3"],
+            "display-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "display-lg-mobile": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { background-color: #fcf9f4; color: #1c1c19; -webkit-font-smoothing: antialiased; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .editorial-divider { height: 0.5px; background-color: #d2c4bb; border: none; }
+    .pull-quote { border-left: 4px solid #4a3728; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-[100] bg-surface border-b border-primary/10 flex justify-between items-center px-container-padding h-touch-target-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a boutique manager with a warm expression, captured in soft, natural window lighting against a clean, minimalist beige background. The aesthetic is sophisticated and editorial, using a warm, muted color palette that aligns with a high-end luxury brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYbajnoa2ciq05swWwE1luaj2GDNWoIpm86mPFYZPjVKXhSzNY1U8yu3J9m-GhqT9r9u5navpTuO_AihCd0jjiGtj1zIDRzyF5ERR0gZBup8PnDZeZm7lJxRXI0dwFpEKS7H7OZ9w2s2g9Ddji9LF5C6np-UrrL6FXbf6MQoqW8QAPqQYTPDpfIHzWM0c__pNIrhIChLcarMf95XgyZio1Ofz3WPXi_r8dMRC1i4RRplfkMSKZP5GkYSHxFSRFTz8Zg1ykQSSEIwQ"/>
+</div>
+<h1 class="font-display-lg text-headline-md text-primary tracking-tight">KhmerOS</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">DASHBOARD</a>
+<a class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary" href="#">REPORTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">INVENTORY</a>
+</nav>
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70">settings</span>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Period Toggle Section -->
+<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">End-of-Day Report</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-80">Wednesday, Oct 24, 2023 • Cashier ID: #4421</p>
+</div>
+<div class="inline-flex p-1 bg-surface-container-low border border-outline-variant rounded-lg">
+<button class="px-6 py-2 bg-primary text-on-primary rounded font-label-caps text-label-caps transition-all">TODAY</button>
+<button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container-high rounded font-label-caps text-label-caps transition-all">WEEK</button>
+<button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container-high rounded font-label-caps text-label-caps transition-all">MONTH</button>
+</div>
+</section>
+<!-- High-Level Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+<!-- Total Revenue Card -->
+<div class="md:col-span-2 bg-primary-container p-10 rounded-xl relative overflow-hidden flex flex-col justify-between">
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase mb-4 block">Total Net Revenue</span>
+<h3 class="font-display-lg text-display-lg text-on-primary mb-2">$4,284.50</h3>
+<p class="font-body-md text-body-md text-on-primary-container">+12.4% vs. previous period</p>
+</div>
+<div class="absolute bottom-[-20px] right-[-20px] opacity-10">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+<!-- Gross Sales Breakdown -->
+<div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-6 block">Gross Sales Breakdown</span>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Food</span>
+<span class="font-headline-sm text-headline-sm text-primary">$1,840.00</span>
+</div>
+<hr class="editorial-divider"/>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Bar</span>
+<span class="font-headline-sm text-headline-sm text-primary">$1,524.50</span>
+</div>
+<hr class="editorial-divider"/>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Coffee</span>
+<span class="font-headline-sm text-headline-sm text-primary">$920.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Reconciliation Core Section -->
+<section class="mb-12">
+<div class="flex items-center gap-4 mb-8">
+<h4 class="font-headline-sm text-headline-sm text-primary">Cash Reconciliation</h4>
+<div class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest uppercase rounded">Balanced</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Expected vs Actual -->
+<div class="bg-surface p-8 border border-outline-variant relative">
+<div class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">EXPECTED CASH IN TILL</label>
+<div class="text-headline-md font-headline-md">$1,250.00</div>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">ACTUAL CASH COUNTED</label>
+<div class="text-headline-md font-headline-md text-secondary">$1,250.00</div>
+</div>
+<div class="pt-4 pull-quote pl-6 italic text-on-surface-variant">
+              "No discrepancies detected in physical currency count for shift 2."
+            </div>
+</div>
+</div>
+<!-- Expenses & Variance -->
+<div class="bg-surface p-8 border border-outline-variant">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">TOTAL EXPENSES (PETTY CASH)</label>
+<div class="text-headline-md font-headline-md">$45.00</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">receipt_long</span>
+</div>
+<hr class="editorial-divider"/>
+<div class="flex justify-between items-end">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">NET VARIANCE</label>
+<div class="text-headline-sm font-headline-sm text-green-700">$0.00</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps rounded hover:opacity-90 active:scale-95 transition-all">VIEW LOGS</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Methods & Category Insights -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Payment Methods Section -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-8">Payment Methods</h4>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-body-md font-bold text-primary">Cash</span>
+<span class="font-body-md text-on-surface-variant">$1,250.00</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 29.2%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-secondary">qr_code_2</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-body-md font-bold text-primary">KhmerQR</span>
+<span class="font-body-md text-on-surface-variant">$2,450.50</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 57.2%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-secondary">credit_card</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="font-body-md font-bold text-primary">Card</span>
+<span class="font-body-md text-on-surface-variant">$584.00</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 13.6%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sales by Category Details -->
+<div class="bg-surface p-8 border border-outline-variant flex flex-col justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-8">Sales by Category</h4>
+<ul class="space-y-4">
+<li class="flex justify-between items-center py-2">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-body-md text-on-surface">Signature Khmer Coffee</span>
+</div>
+<span class="font-body-md text-on-surface-variant font-bold">$420.00</span>
+</li>
+<hr class="editorial-divider"/>
+<li class="flex justify-between items-center py-2">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-on-surface">Beef Lok Lak (Food)</span>
+</div>
+<span class="font-body-md text-on-surface-variant font-bold">$1,200.00</span>
+</li>
+<hr class="editorial-divider"/>
+<li class="flex justify-between items-center py-2">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-body-md text-on-surface">Draft Beer (Bar)</span>
+</div>
+<span class="font-body-md text-on-surface-variant font-bold">$890.50</span>
+</li>
+<hr class="editorial-divider"/>
+<li class="flex justify-between items-center py-2">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="font-body-md text-on-surface">Others</span>
+</div>
+<span class="font-body-md text-on-surface-variant font-bold">$1,774.00</span>
+</li>
+</ul>
+</div>
+<div class="mt-8">
+<img class="w-full h-32 object-cover grayscale opacity-40 rounded" data-alt="A cinematic, low-contrast photograph of a high-end coffee shop interior at closing time. The lighting is moody and warm, highlighting the textures of dark wood and polished brass. The composition is artistic and minimalist, reflecting a calm, professional atmosphere of a successful business day ending in a premium boutique environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiufQt-TRyKqjhhrMT6bYu1qpcZzP-oQqXmcr5PzNEEVvpbYy2Fb7zBEG25e_OKypborXhZpfQWtIFEmPK57YiAEVVbDvmWmJg_dCDXa_VQD7fIMDprX77GwgrmzCXVe4cMBQ3YQdzCrPBjDBR7ib-tbcYPSJSJpICWA1VEPYe-cAsg_cLrMpEqFP9H4Xm1AyZxNK0pv_ojOfmUZvOTP3slY35uoB-kZPcSaZgJfh9-QvHPLyMOtvlF0OAcZ06Lqp-uBw0ap-D0RJq"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 w-full z-50 border-t border-primary/10 bg-surface shadow-sm flex justify-around items-center h-touch-target-lg px-2 pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 pt-2 active:scale-95 duration-100 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 pt-2 active:scale-95 duration-100 cursor-pointer">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-label-md text-label-md">POS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary font-bold border-t-2 border-secondary pt-2 active:scale-95 duration-100 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bar_chart</span>
+<span class="font-label-md text-label-md">Sales</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 pt-2 active:scale-95 duration-100 cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Stock</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/70 pt-2 active:scale-95 duration-100 cursor-pointer">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-md text-label-md">More</span>
+</div>
+</footer>
+<script>
+    // Micro-interactions for buttons and toggles
+    document.querySelectorAll('.inline-flex button').forEach(button => {
+      button.addEventListener('click', function() {
+        // Toggle active styles
+        this.parentElement.querySelectorAll('button').forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-on-primary');
+          btn.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('bg-primary', 'text-on-primary');
+        this.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // Simple scroll animation for bento cards
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.grid > div').forEach(card => {
+      card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+      observer.observe(card);
+    });
+  </script>
+</body></html>
