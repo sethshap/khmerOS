@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KhmerOS Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#dec1ac",
+            "inverse-surface": "#31302d",
+            "primary-fixed-dim": "#dec1ac",
+            "tertiary-fixed": "#f4dfcb",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#d7c3b0",
+            "on-secondary-fixed": "#281803",
+            "secondary-fixed-dim": "#e0c29f",
+            "on-surface-variant": "#4e453e",
+            "on-tertiary-fixed": "#241a0e",
+            "primary-container": "#4a3728",
+            "on-secondary-container": "#786044",
+            "secondary-fixed": "#fdddb9",
+            "surface-bright": "#fcf9f4",
+            "surface-container-highest": "#e5e2dd",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-container": "#fdddb9",
+            "secondary": "#715a3e",
+            "on-primary-fixed-variant": "#574333",
+            "error": "#ba1a1a",
+            "surface-tint": "#705a49",
+            "surface-dim": "#dcdad5",
+            "surface-container": "#f0ede8",
+            "on-tertiary-container": "#b5a290",
+            "on-primary-fixed": "#28180b",
+            "on-primary-container": "#bba08c",
+            "primary": "#322214",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-variant": "#e5e2dd",
+            "surface": "#fcf9f4",
+            "on-secondary-fixed-variant": "#584329",
+            "on-tertiary-fixed-variant": "#524436",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f6f3ee",
+            "on-error-container": "#93000a",
+            "background": "#fcf9f4",
+            "surface-container-high": "#ebe8e3",
+            "on-surface": "#1c1c19",
+            "tertiary-container": "#46392b",
+            "primary-fixed": "#fbddc7",
+            "on-background": "#1c1c19",
+            "outline-variant": "#d2c4bb",
+            "outline": "#80756d",
+            "tertiary": "#2f2317"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "playfair": ["Libre Caslon Text", "Georgia", "serif"],
+            "sans": ["Source Sans Three", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Source+Sans+Three:wght@400;600;700&display=swap');
+    body { font-family: 'Source Sans Three', sans-serif; }
+    .font-playfair { font-family: 'Libre Caslon Text', serif; }
+  </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Source+Sans+Three:wght@400;600;700&amp;display=swap" data-snapdom="injected-import"></head>
+<body class="bg-surface text-primary min-h-screen pb-24">
+<!-- BEGIN: NavigationHeader -->
+<header class="px-6 pt-6 flex justify-between items-center bg-surface sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<h1 class="text-2xl font-bold font-playfair text-primary">KhmerOS</h1>
+<button class="text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+<circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 border border-outline/30 rounded-full px-4 py-1.5 text-sm font-semibold text-primary">
+<svg class="text-secondary" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+</svg>
+        Customize
+      </button>
+<div class="w-10 h-10 rounded-full bg-primary text-surface flex items-center justify-center font-bold">B</div>
+</div>
+</header>
+<!-- END: NavigationHeader -->
+<main class="px-6 py-8">
+<!-- BEGIN: GreetingSection -->
+<section class="mb-8" data-purpose="user-greeting">
+<p class="uppercase text-[10px] tracking-[0.2em] font-bold text-outline mb-2">Friday, May 22 • Jambo</p>
+<h2 class="text-4xl font-playfair font-bold flex items-center gap-2">
+        Welcome back, Bobo <span class="text-3xl">👋</span>
+</h2>
+</section>
+<!-- END: GreetingSection -->
+<!-- BEGIN: RevenueSummaryCard -->
+<section class="bg-white rounded-[2rem] p-6 shadow-sm border border-outline-variant mb-6" data-purpose="revenue-overview">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="uppercase text-[10px] tracking-[0.15em] font-bold text-outline mb-2">Daily Revenue</p>
+<p class="text-4xl font-playfair font-bold">$4,280.00</p>
+<p class="text-xs text-secondary font-bold mt-1 flex items-center gap-1">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 17 6-6 4 4 8-8"></path>
+<path d="M17 7h4v4"></path>
+</svg>
+            +12% vs yesterday
+          </p>
+</div>
+<div class="text-right">
+<p class="uppercase text-[10px] tracking-[0.15em] font-bold text-outline mb-2">Weekly Trend</p>
+<div class="flex items-end gap-1 h-12">
+<div class="w-2 bg-surface-container-highest h-1/2 rounded-sm"></div>
+<div class="w-2 bg-surface-container-highest h-3/4 rounded-sm"></div>
+<div class="w-2 bg-surface-container-highest h-2/3 rounded-sm"></div>
+<div class="w-2 bg-surface-container-highest h-5/6 rounded-sm"></div>
+<div class="w-2 bg-primary h-full rounded-sm"></div>
+<div class="w-2 bg-surface-container-highest h-2/3 rounded-sm"></div>
+<div class="w-2 bg-surface-container-highest h-3/4 rounded-sm"></div>
+</div>
+<div class="flex gap-1 mt-1">
+<span class="text-[8px] w-2 text-center text-outline">M</span>
+<span class="text-[8px] w-2 text-center text-outline">T</span>
+<span class="text-[8px] w-2 text-center text-outline">W</span>
+<span class="text-[8px] w-2 text-center text-outline">T</span>
+<span class="text-[8px] w-2 text-center text-outline">F</span>
+<span class="text-[8px] w-2 text-center text-outline">S</span>
+<span class="text-[8px] w-2 text-center text-outline">S</span>
+</div>
+</div>
+</div>
+<div class="border-t border-surface-container-highest pt-4">
+<div class="flex justify-between items-center mb-2">
+<p class="uppercase text-[10px] tracking-[0.15em] font-bold text-outline">Progress to Goal</p>
+<p class="text-xs font-bold"><span class="text-primary">71%</span> <span class="text-outline font-normal">of $6,000</span></p>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full">
+<div class="bg-primary h-3 rounded-full" style="width: 71%"></div>
+</div>
+</div>
+</section>
+<!-- END: RevenueSummaryCard -->
+<!-- BEGIN: PrimaryActionCard -->
+<section class="mb-6" data-purpose="primary-call-to-action">
+<button class="w-full bg-primary text-on-primary rounded-[2rem] flex items-center shadow-lg transition-transform active:scale-95 text-left py-12 px-8">
+<div class="bg-white/10 rounded-2xl flex items-center justify-center mr-6 w-24 h-24">
+<svg fill="none" height="48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+<rect height="20" rx="2" width="16" x="4" y="2"></rect>
+<line x1="8" x2="16" y1="6" y2="6"></line>
+<line x1="16" x2="16" y1="14" y2="18"></line>
+<path d="M16 10h.01"></path>
+<path d="M12 10h.01"></path>
+<path d="M8 10h.01"></path>
+<path d="M12 14h.01"></path>
+<path d="M8 14h.01"></path>
+<path d="M12 18h.01"></path>
+<path d="M8 18h.01"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-playfair font-bold mb-1 text-3xl">Open POS Terminal</h3>
+<p class="text-white/70 text-lg">Shift started 2h 45m ago</p>
+</div>
+<svg class="text-white/40" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</button>
+</section>
+<!-- END: PrimaryActionCard -->
+<!-- BEGIN: FeatureGrid -->
+<section class="grid grid-cols-2 mb-6 gap-6" data-purpose="main-tiles">
+<!-- Sales Tile -->
+<div class="bg-surface-container-low rounded-[2rem] border border-outline-variant flex flex-col justify-between aspect-square p-6 h-auto">
+<div class="bg-primary/5 rounded-lg flex items-center justify-center w-12 h-12">
+<svg class="text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"></path>
+<path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.8-2.8L13 15"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-lg font-playfair font-bold text-primary">Sales &amp; EOD</h4>
+<p class="text-outline text-xs mt-2">$4280.00 today</p>
+</div>
+</div>
+<!-- Expenses Tile -->
+<div class="bg-surface-container-low rounded-[2rem] border border-outline-variant flex flex-col justify-between aspect-square p-6 h-auto">
+<div class="bg-secondary/5 rounded-lg flex items-center justify-center w-12 h-12">
+<svg class="text-secondary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+<path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z"></path>
+<path d="M12 11h.01"></path>
+<path d="M12 16h.01"></path>
+<path d="M8 11h.01"></path>
+<path d="M8 16h.01"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-lg font-playfair font-bold text-primary">Expenses</h4>
+<p class="text-outline text-xs mt-2">$34.50 total</p>
+</div>
+</div>
+<!-- Inventory Tile -->
+<div class="bg-surface-container-low rounded-[2rem] border border-outline-variant flex flex-col justify-between aspect-square p-6 h-auto">
+<div class="bg-primary/5 rounded-lg flex items-center justify-center w-12 h-12">
+<svg class="text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m7.5 4.27 9 5.15"></path>
+<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+<path d="m3.27 6.96 8.73 5.05 8.73-5.05"></path>
+<path d="M12 22.08V12"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-lg font-playfair font-bold text-primary">Inventory</h4>
+<p class="text-outline text-xs mt-2">Stock • COGS</p>
+</div>
+</div>
+<!-- Ordering Tile -->
+<div class="bg-surface-container-low rounded-[2rem] border border-outline-variant flex flex-col justify-between aspect-square p-6 h-auto">
+<div class="bg-secondary/5 rounded-lg flex items-center justify-center w-12 h-12">
+<svg class="text-secondary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="21" r="1"></circle>
+<circle cx="19" cy="21" r="1"></circle>
+<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-lg font-playfair font-bold text-primary">Ordering</h4>
+<p class="text-outline text-xs mt-2">Predictive restock</p>
+</div>
+</div>
+</section>
+<!-- END: FeatureGrid -->
+<!-- BEGIN: AIAgentCard -->
+<section class="mb-6" data-purpose="secondary-action">
+<div class="text-on-primary rounded-[2rem] p-6 flex items-center shadow-md bg-[#7c3a2d]">
+<div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h4 class="text-lg font-playfair font-bold">AI Agent — Loss Prevention</h4>
+<p class="text-xs mt-1 uppercase tracking-wider text-white/70">Deploy to monitor 24/7</p>
+</div>
+<span class="bg-[#fdecea] text-[#7c3a2d] text-[10px] font-bold px-3 py-1.5 rounded-md uppercase tracking-wider" style="opacity: 0;">Offline</span>
+</div>
+</section>
+<!-- END: AIAgentCard -->
+<!-- BEGIN: SystemStatus -->
+<section class="flex items-center gap-2 px-1" data-purpose="system-status">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<p class="uppercase text-[9px] font-bold tracking-widest text-primary">POS Terminal 01 Online • $1 = ៛4,000</p>
+</section>
+<!-- END: SystemStatus -->
+</main>
+<!-- BEGIN: BottomNavigation -->
+<nav class="fixed bottom-0 left-0 right-0 border-outline-variant flex justify-around items-center py-4 px-2 z-50 bg-primary-container">
+<button class="flex flex-col items-center gap-1 text-surface">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-surface/60">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 20v-6h4"></path>
+<rect height="16" rx="2" width="16" x="4" y="4"></rect>
+<path d="M8 20v-8"></path>
+</svg>
+<span class="text-[9px] font-bold uppercase tracking-widest">Sales</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-surface/60">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<rect height="14" rx="2" width="14" x="5" y="7"></rect>
+<path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"></path>
+</svg>
+<span class="text-[9px] font-bold uppercase tracking-widest">Inventory</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-surface/60">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="21" r="1"></circle>
+<circle cx="19" cy="21" r="1"></circle>
+<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+</svg>
+<span class="text-[9px] font-bold uppercase tracking-widest">Ordering</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-surface/60">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+<circle cx="5" cy="12" r="1"></circle>
+</svg>
+<span class="text-[9px] font-bold uppercase tracking-widest">More</span>
+</button>
+</nav>
+<!-- END: BottomNavigation -->
+
+
+
+
+</body></html>
